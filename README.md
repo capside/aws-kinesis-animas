@@ -9,7 +9,7 @@
 * Se debe proteger con un security group que permita acceso por ssh y por http al puerto 8080 desde al menos la IP desde la que os encontréis
 * Debe asumir un rol que le permita acceder a: Kinesis, CloudWatch, DynamoDB y S3
 * Usaremos la imagen Amazon Linux AMI y una instancia de tipo m4.large
-* En el script de user data eliminaremos la versión 1.8 de Java e instalaremos la 1.9, podemos usar el script de debajo
+* En el script de user data eliminaremos la versión 1.7 de Java e instalaremos la 1.8, podemos usar el script de debajo
  ```
  #!/bin/bash
  yum install -y jq git
