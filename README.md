@@ -47,3 +47,7 @@ java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044 -jar 
 ```
 java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1045 -jar ZombieConsumer-0.0.2-SNAPSHOT.jar --stream=animas --region=us-east-2
 ```
+
+# Observar las ánimas
+Ahora podemos conectarnos por http al puerto 8080 de la instancia en la que se ejecuta el consumidor, observaremos una web en la que aparecen todas las ánimas detectadas por nuestros drones
+![ÁnimasEnPena](https://pbs.twimg.com/media/ClfvYdOXIAAj1jK.jpg:large)
