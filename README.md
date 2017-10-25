@@ -42,7 +42,7 @@ wget https://github.com/capside/aws-kinesis-animas/raw/master/AnimasConsumer.jar
 El productor recibe varios parámetros, entre ellos, el nombre del stream y la región donde éste se encuentra.
 Además, le daremos la latitud y longitud donde lo queremos desplegar (monte de las ánimas; Lat:41.754994, Lon:-2.449176)
 ```
-java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044 -jar AnimasProducer.jar --drone=5555 --stream=animas --region=us-east-2 --latitude=41.754994 --longitude=-2.449176
+java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044 -jar AnimasProducer.jar --drone=5555 --stream=animas --region=us-east-2 --latitude=41.764444 --longitude=-2.436666
 ```
 
 ## Ejecutar el consumidor
