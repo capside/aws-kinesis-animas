@@ -19,8 +19,12 @@
  
  ## Creación de un "Kinesis Stream" a través de la CLI de AWS (desde la instancia lanzada arriba)
 
+Configuramos la CLI de AWS en la instancia
 ```bash
 aws configure ##Solo hace falta configurar la region, usar la misma región que aquella donde se haya desplegado la instancia
+```
+Usamos la CLI para crear nuestro stream
+```bash
 aws kinesis create-stream --stream-name animas --shard-count 2
 aws kinesis describe-stream --stream-name animas
 aws kinesis describe-stream --stream-name animas --query StreamDescription.StreamStatus
@@ -30,8 +34,8 @@ aws kinesis get-records --shard-iterator "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx
 
 ## Descargar los binarios de productor y consumidor a la instancia
 ```bash
-wget https://github.com/capside/aws-kinesis-zombies/releases/download/0.0.2/ZombieConsumer-0.0.2-SNAPSHOT.jar
-wget https://github.com/capside/aws-kinesis-zombies/releases/download/0.0.2/ZombieProducer-0.0.2-SNAPSHOT.jar
+wget https://github.com/capside/aws-kinesis-animas/AnimasConsumer.jar
+wget https://github.com/capside/aws-kinesis-animas/AnimasProducer.jar
 ```
 
 ## Ejecutar el productor
