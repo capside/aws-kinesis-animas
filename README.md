@@ -1,7 +1,5 @@
-Usando Kinesis en el monte de las ánimas
+[Capside](http://twitter.com/capside): Usando Kinesis en el monte de las ánimas
 ========================================================
-
-## Somos [Capside](http://twitter.com/capside)
 
 ## Diapositivas 
 * Aquí están las diapositivas de la charla [diapos](http://blabla.com/diaposyeso)
