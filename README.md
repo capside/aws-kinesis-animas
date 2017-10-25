@@ -51,8 +51,9 @@ java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1045 -jar 
 ```
 
 ## Observar las ánimas
-Ahora podemos conectarnos por http al puerto 8080 de la instancia en la que se ejecuta el consumidor, observaremos una web en la que aparecen todas las ánimas detectadas por nuestros drones
-![ÁnimasEnPena](https://pbs.twimg.com/media/ClfvYdOXIAAj1jK.jpg:large)
+Ahora podemos conectarnos por http al puerto 8080 de la instancia en la que se ejecuta el consumidor, observaremos la aplicación web en la que aparecen todas las ánimas detectadas por nuestros drones
+
+![ÁnimasEnPena](https://github.com/capside/aws-kinesis-animas/blob/master/MonteAnimas.gif)
 
 ## Limpieza final
 Antes de eliminar la instancia, podemos usarla para borrar el stream de Kinesis así como la tabla de DynamoDB creada por el consumidor.
