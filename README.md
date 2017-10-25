@@ -58,7 +58,7 @@ Ahora podemos conectarnos por http al puerto 8080 de la instancia en la que se e
 ## Limpieza final
 Antes de eliminar la instancia, podemos usarla para borrar el stream de Kinesis así como la tabla de DynamoDB creada por el consumidor.
 ```
-aws dynamodb delete-table --table-name Animas
+aws dynamodb delete-table --table-name Zombies
 aws kinesis delete-stream --stream-name animas
 ```
 Ahora podemos eliminar la instancia
