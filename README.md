@@ -30,7 +30,7 @@ aws kinesis get-shard-iterator --stream-name animas --shard-id shardId-000000000
 aws kinesis get-records --shard-iterator "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
-## Bajar el código de productor y consumidor a la instancia
+## Descargar los binarios de productor y consumidor a la instancia
 ```bash
 wget https://github.com/capside/aws-kinesis-zombies/releases/download/0.0.2/ZombieConsumer-0.0.2-SNAPSHOT.jar
 wget https://github.com/capside/aws-kinesis-zombies/releases/download/0.0.2/ZombieProducer-0.0.2-SNAPSHOT.jar
