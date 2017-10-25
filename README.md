@@ -22,6 +22,7 @@ Usando Kinesis en el monte de las ánimas
  ## Creación de un "Kinesis Stream" a través de la CLI de AWS (desde la instancia lanzada arriba)
 
 ```bash
+aws configure ##Solo hace falta configurar la region, usar la misma región que aquella donde se haya desplegado la instancia
 aws kinesis create-stream --stream-name zombies --shard-count 2
 aws kinesis describe-stream --stream-name zombies
 aws kinesis describe-stream --stream-name zombies --query StreamDescription.StreamStatus
