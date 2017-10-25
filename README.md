@@ -32,7 +32,7 @@ aws kinesis get-shard-iterator --stream-name animas --shard-id shardId-000000000
 aws kinesis get-records --shard-iterator "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
 ```
 
-## Descargar los binarios de productor y consumidor a la instancia
+## Descargar los binarios de productor y consumidor en la instancia
 ```bash
 wget https://github.com/capside/aws-kinesis-animas/raw/master/AnimasProducer.jar
 wget https://github.com/capside/aws-kinesis-animas/raw/master/AnimasConsumer.jar
