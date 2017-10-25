@@ -2,7 +2,7 @@
 ========================================================
 
 ## Diapositivas 
-* Aquí están las diapositivas de la charla [diapos](http://blabla.com/diaposyeso)
+* Aquí están las [diapositivas](https://github.com/capside/aws-kinesis-animas/blob/master/KinesisAnimas.pdf) de la charla
 
 ## Creación de una instancia EC2 para ejecutar el productor y el consumidor.
 * La instancia ha de estar en una subnet con acceso a Internet y tener una IP pública para poder alcanzarla
