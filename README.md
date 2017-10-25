@@ -23,9 +23,27 @@ Usando Kinesis en el monte de las ánimas
 
 ```bash
 aws configure ##Solo hace falta configurar la region, usar la misma región que aquella donde se haya desplegado la instancia
-aws kinesis create-stream --stream-name zombies --shard-count 2
-aws kinesis describe-stream --stream-name zombies
-aws kinesis describe-stream --stream-name zombies --query StreamDescription.StreamStatus
-aws kinesis get-shard-iterator --stream-name zombies --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON --query ShardIterator
+aws kinesis create-stream --stream-name animas --shard-count 2
+aws kinesis describe-stream --stream-name animas
+aws kinesis describe-stream --stream-name animas --query StreamDescription.StreamStatus
+aws kinesis get-shard-iterator --stream-name animas --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON --query ShardIterator
 aws kinesis get-records --shard-iterator "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
+```
+
+## Bajar el código de productor y consumidor a la instancia
+```bash
+wget https://github.com/capside/aws-kinesis-zombies/releases/download/0.0.2/ZombieConsumer-0.0.2-SNAPSHOT.jar
+wget https://github.com/capside/aws-kinesis-zombies/releases/download/0.0.2/ZombieProducer-0.0.2-SNAPSHOT.jar
+```
+
+## Ejecutar el productor
+El productor recibe varios parámetros, entre ellos, el nombre del stream y la región donde éste se encuentra.
+Además, le daremos la latitud y longitud donde lo queremos desplegar (monte de las ánimas; Lat:41.754994, Lon:-2.449176)
+```
+java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1044 -jar ZombieProducer-0.0.2-SNAPSHOT.jar --drone=5555 --stream=animas --region=us-east-2 --latitude=41.754994 --longitude=-2.449176
+```
+
+## Ejecutar el consumidor
+```
+java -Xdebug -Xrunjdwp:transport=dt_socket,server=y,suspend=n,address=1045 -jar ZombieConsumer-0.0.2-SNAPSHOT.jar --stream=animas --region=us-east-2
 ```
