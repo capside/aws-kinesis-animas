@@ -23,10 +23,14 @@ Configuramos la CLI de AWS en la instancia
 ```bash
 aws configure ##Solo hace falta configurar la region, usar la misma región que aquella donde se haya desplegado la instancia
 ```
-Usamos la CLI para crear nuestro stream
+Usamos la CLI para crear nuestro stream, en este caso, con 2 shards.
+
 ```bash
 aws kinesis create-stream --stream-name animas --shard-count 2
 aws kinesis describe-stream --stream-name animas
+```
+Tras crear el stream, vemos si se ha creado correctamente y si tenemos registros en alguno de los shards.
+```bash
 aws kinesis describe-stream --stream-name animas --query StreamDescription.StreamStatus
 aws kinesis get-shard-iterator --stream-name animas --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON --query ShardIterator
 aws kinesis get-records --shard-iterator "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
