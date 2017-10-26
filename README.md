@@ -5,10 +5,10 @@
 * Aquí están las [diapositivas](https://github.com/capside/aws-kinesis-animas/blob/master/KinesisAnimas.pdf) de la charla
 
 ## Creación de una instancia EC2 para ejecutar el productor y el consumidor.
+* Usaremos la imagen Amazon Linux AMI y una instancia de tipo m4.large
 * La instancia ha de estar en una subnet con acceso a Internet y tener una IP pública para poder alcanzarla
 * Se debe proteger con un security group que permita acceso por ssh y por http al puerto 8080 desde al menos la IP desde la que os encontréis
 * Debe asumir un rol que le permita acceder a: Kinesis, CloudWatch, DynamoDB y S3
-* Usaremos la imagen Amazon Linux AMI y una instancia de tipo m4.large
 * En el script de user data eliminaremos la versión 1.7 de Java e instalaremos la 1.8, podemos usar el script de debajo
  ```
  #!/bin/bash
