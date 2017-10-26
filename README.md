@@ -16,7 +16,13 @@
  yum remove -y java-1.7.0-openjdk
  yum install -y java-1.8.0
  ``` 
- 
+
+## Descargar los binarios de productor y consumidor en la instancia
+```bash
+wget https://github.com/capside/aws-kinesis-animas/raw/master/AnimasProducer.jar
+wget https://github.com/capside/aws-kinesis-animas/raw/master/AnimasConsumer.jar
+```
+
  ## Creación de un "Kinesis Stream" a través de la CLI de AWS (desde la instancia lanzada arriba)
 
 Configuramos la CLI de AWS en la instancia
@@ -34,12 +40,6 @@ Tras crear el stream, vemos si se ha creado correctamente y si tenemos registros
 aws kinesis describe-stream --stream-name animas --query StreamDescription.StreamStatus
 aws kinesis get-shard-iterator --stream-name animas --shard-id shardId-000000000000 --shard-iterator-type TRIM_HORIZON --query ShardIterator
 aws kinesis get-records --shard-iterator "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx"
-```
-
-## Descargar los binarios de productor y consumidor en la instancia
-```bash
-wget https://github.com/capside/aws-kinesis-animas/raw/master/AnimasProducer.jar
-wget https://github.com/capside/aws-kinesis-animas/raw/master/AnimasConsumer.jar
 ```
 
 ## Ejecutar el productor
